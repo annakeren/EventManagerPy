@@ -24,13 +24,14 @@ class Test(unittest.TestCase):
 
 
     def testName(self):
-        responseRead = selectAllEvents()
+#         responseRead = selectAllEvents()
+#         print(responseRead)
+#         responseRead = selectEvent('userName:anna')
+#         print(responseRead)
+#         responseRead = login('anna')
+#         print(responseRead)
+        responseRead = insertEvent('event11', 'eventname11', 'cool place', '21:00', '2014:05:17')
         print(responseRead)
-        responseRead = selectEvent('userName:anna')
-        print(responseRead)
-        responseRead = login('anna')
-        print(responseRead)
-        responseRead = insertEvent('event1', 'eventname1', 'cool place', '21:00', '2014:05:17')
         pass
 
 

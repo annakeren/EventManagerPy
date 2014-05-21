@@ -14,7 +14,9 @@ def insertEvent(eventId, eventName, eventPlace, eventTime, eventDate):
                      'eventTime' : eventTime + ':00Z', 
                      'eventDate' : eventDate + 'T' + eventTime}
     persistUrl = solrConstants.SOLR_ULR + solrConstants.SOLR_PERSIST;
-    response = urlRequest.urlopen(persistUrl, json.dumps(bodyToPersist))
+    
+    bodyToPersist = json.dumps(bodyToPersist).encode('ascii');
+    response = urlRequest.urlopen(persistUrl, bodyToPersist)
     responseRead = response.read()  
     print("insertEvent implementation")
     return responseRead
